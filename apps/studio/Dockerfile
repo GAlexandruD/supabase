@@ -9,6 +9,9 @@
 #    docker build . -f apps/studio/Dockerfile --target production -t studio:latest --no-cache
 
 FROM node:20-slim AS base
+# Install pnpm
+RUN npm install -g pnpm && pnpm --version
+
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 RUN corepack enable
