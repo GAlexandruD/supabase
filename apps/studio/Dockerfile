@@ -10,6 +10,7 @@
 
 FROM node:20-slim AS base
 # Install pnpm
+RUN echo "Starting pnpm installation"
 RUN npm install -g pnpm && pnpm --version
 
 ENV PNPM_HOME="/pnpm"
